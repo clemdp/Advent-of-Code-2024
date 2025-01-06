@@ -54,3 +54,6 @@ dkms.conf
 # Local files
 **/local/*
 aoc24
+
+# Visual Studio Code
+.vscode/
