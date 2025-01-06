@@ -18,7 +18,7 @@ $(TARGET): $(OBJECTS)
 
 # Règle générique pour la création des fichiers objets
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/%.h | $(OBJDIR)
-	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INCDIR) -c -g $< -o $@
 
 # Assurer que le répertoire obj existe
 $(OBJDIR):
