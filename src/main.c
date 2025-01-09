@@ -27,23 +27,18 @@ int main(int argc, char* argv[]) {
 
 int day1(char *filename, int part)
 {
-    list_t *list_one = NULL;
-    list_t *list_two = NULL;
     int result = 0;
 
-    read_file(filename, &list_one, &list_two);
 
     if (part == 1)
     {
-        result = part_one(list_one, list_two);
+        result = part_one(filename);
     }
     else
     {
-        result = part_two(list_one, list_two);
+        result = part_two(filename);
     }
 
-    free_list(&list_one);
-    free_list(&list_two);
 
     return result;
 }
