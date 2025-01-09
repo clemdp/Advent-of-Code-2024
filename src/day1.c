@@ -1,7 +1,27 @@
 #include "day1.h"
 
+static int part_one(char *filename);
+static int part_two(char *filename);
+static void get_number_line(char *line);
+
 static list_t *list_one;
 static list_t *list_two;
+
+int day1(char *filename, int part)
+{
+    int result = 0;
+
+    if (part == 1)
+    {
+        result = part_one(filename);
+    }
+    else
+    {
+        result = part_two(filename);
+    }
+
+    return result;
+}
 
 /**
  * @brief
@@ -15,7 +35,7 @@ static list_t *list_two;
  * 
  * @returns the sum of these distances
  */
-int part_one(char *filename) 
+static int part_one(char *filename) 
 {
     int result = 0;
     int min1 = 0;
@@ -40,7 +60,7 @@ int part_one(char *filename)
     return result;
 }
 
-int part_two(char *filename) 
+static int part_two(char *filename) 
 {
     int result = 0;
 
@@ -64,7 +84,7 @@ int part_two(char *filename)
     return result;
 }
 
-void get_number_line(char *line)
+static void get_number_line(char *line)
 {
     if (line == NULL)
     {

@@ -1,4 +1,8 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "day1.h"
+
 
 int main(int argc, char* argv[]) {
     char *filename;
@@ -23,22 +27,4 @@ int main(int argc, char* argv[]) {
     printf("Result: %d\n", res);
 
     return EXIT_SUCCESS;
-}
-
-int day1(char *filename, int part)
-{
-    int result = 0;
-
-
-    if (part == 1)
-    {
-        result = part_one(filename);
-    }
-    else
-    {
-        result = part_two(filename);
-    }
-
-
-    return result;
 }
