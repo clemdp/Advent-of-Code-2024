@@ -42,6 +42,24 @@ list_t *pop(list_t **list)
     return value;
 }
 
+int occurences(list_t *list, int value)
+{
+    int count = 0;
+
+    while (list != NULL)
+    {
+        if (list->value == value)
+        {
+            count += 1;
+            // pop(&list);
+        }
+
+        list = list->next;
+    }
+
+    return count;
+}
+
 void print_list(list_t *list, bool print_index) 
 {
     while (list != NULL) {

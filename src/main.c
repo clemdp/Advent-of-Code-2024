@@ -14,13 +14,8 @@ int main(int argc, char* argv[]) {
     
     read_file(filename, &list_one, &list_two);
     
-    // printf("(In main.c) List 1: ");
-    // print_list(list_one, false);
-    // printf("\n(In main.c) List 2: ");
-    // print_list(list_two, false);
-    // printf("\n");
-
-    int result = part_one(list_one, list_two);
+    // int result = part_one(list_one, list_two);
+    int result = part_two(list_one, list_two);
     printf("Result: %d\n", result);
 
     free_list(&list_one);
