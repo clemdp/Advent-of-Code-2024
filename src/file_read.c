@@ -1,5 +1,4 @@
 #include "file_read.h"
-// #include "list.h"
 
 int read_file(char* filename, list_t **list_one, list_t **list_two) 
 {
@@ -38,8 +37,6 @@ int read_file(char* filename, list_t **list_one, list_t **list_two)
         {
             insert(&l2, i2, 0);
         }
-
-        // printf("i1: %d, i2: %d\n", i1, i2);
     }
 
     putchar('\n');
