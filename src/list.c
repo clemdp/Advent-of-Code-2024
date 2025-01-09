@@ -51,7 +51,6 @@ int occurences(list_t *list, int value)
         if (list->value == value)
         {
             count += 1;
-            // pop(&list);
         }
 
         list = list->next;
