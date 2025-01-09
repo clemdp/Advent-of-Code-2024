@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "day1.h"
-
+#include "day2.h"
 
 int main(int argc, char* argv[]) {
     char *filename;
@@ -23,8 +23,12 @@ int main(int argc, char* argv[]) {
     {
         res = day1(filename, part);
     }
+    else if (day == 2)
+    {
+        res = day2(filename, part);
+    }
 
-    printf("Result: %d\n", res);
+    printf("\nResult: %d\n", res);
 
     return EXIT_SUCCESS;
 }
