@@ -1,9 +1,14 @@
+#include <sys/types.h>
+#include <stdio.h>
+
 #include "file_read.h"
 
 int read_file(char *filename, void (*my_func)(char *line))
 {
     FILE *file;
-    char line[128];
+    size_t len = 0;
+    ssize_t read;
+    char *line = NULL;
 
     file = fopen(filename, "r");
     if (file == NULL)
@@ -12,7 +17,7 @@ int read_file(char *filename, void (*my_func)(char *line))
         return EXIT_FAILURE;
     }
 
-    while (fgets(line, 128, file))
+    while ((read = getline(&line, &len, file)) != -1)
     {
         if (my_func != NULL)
         {
@@ -20,6 +25,7 @@ int read_file(char *filename, void (*my_func)(char *line))
         }
     }
 
+    free(line);
     fclose(file);
     return EXIT_SUCCESS;
 }
