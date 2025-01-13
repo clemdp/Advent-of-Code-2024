@@ -10,11 +10,14 @@ SOURCES=$(wildcard $(SRCDIR)/*.c)
 OBJECTS=$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
 
 
-all: $(TARGET)
+all: $(TARGET) tests
 
 # Règle de construction de l'exécutable final
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
+
+tests:
+	make -f MakeTests.mk V=${V} all
 
 # Règle générique pour la création des fichiers objets
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/%.h | $(OBJDIR)
