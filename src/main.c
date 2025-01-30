@@ -1,4 +1,5 @@
 #include "main.h"
+#include "day5.h"
 
 int main(int argc, char* argv[]) {
     char *filename;
@@ -18,6 +19,10 @@ int main(int argc, char* argv[]) {
     if (day == 1)
     {
         res = day1(filename, part);
+    }
+    else if (day == 5)
+    {
+        res = day5(filename, part);
     }
 
     printf("Result: %d\n", res);
